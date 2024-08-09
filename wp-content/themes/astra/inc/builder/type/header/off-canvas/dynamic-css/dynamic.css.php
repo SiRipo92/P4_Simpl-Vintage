@@ -82,6 +82,20 @@ function astra_off_canvas_row_setting( $dynamic_css, $dynamic_css_filtered = '' 
 		),
 	);
 
+	if ( is_rtl() ) {
+
+		/**
+		 * Off-Canvas CSS if RTL mode is enabled.
+		 */
+		$css_output['.rtl #ast-mobile-popup-wrapper #ast-mobile-popup'] = array(
+			'pointer-events' => 'none',
+		);
+
+		$css_output['.rtl #ast-mobile-popup-wrapper #ast-mobile-popup.active'] = array(
+			'pointer-events' => 'unset',
+		);
+	}
+
 	$css_output[ $selector . ' .menu-toggle-close' ]['color'] = $off_canvas_close_color;
 
 	/* Parse CSS from array() */
@@ -281,6 +295,7 @@ function astra_off_canvas_static_css() {
 		}
 		.ast-mobile-popup-drawer.content-align-flex-end .main-header-bar-navigation .menu-item-has-children > .ast-menu-toggle {
 			right: calc( 20px - 0.907em);
+			width: fit-content;
 		}
 		.ast-mobile-popup-drawer .ast-mobile-popup-content .ast-search-menu-icon,
 		.ast-mobile-popup-drawer .ast-mobile-popup-content .ast-search-menu-icon.slide-search,
@@ -370,6 +385,7 @@ function astra_off_canvas_static_css() {
 		}
 		.ast-mobile-popup-drawer.content-align-flex-end .main-header-bar-navigation .menu-item-has-children > .ast-menu-toggle {
 			left: calc( 20px - 0.907em);
+			width: fit-content;
 		}
 		.ast-mobile-popup-drawer .ast-mobile-popup-content .ast-search-menu-icon,
 		.ast-mobile-popup-drawer .ast-mobile-popup-content .ast-search-menu-icon.slide-search,

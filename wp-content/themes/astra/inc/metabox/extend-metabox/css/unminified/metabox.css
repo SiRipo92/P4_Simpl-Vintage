@@ -264,7 +264,7 @@ td.ast-advanced-hook-row-heading {
 }
 .components-button:focus:not(:disabled) {
     box-shadow: none;
-    outline: 0;
+    outline: 1.5px solid transparent;
 }
 .ast-advanced-hook-row-content section {
     max-width: 250px;
@@ -995,11 +995,6 @@ a.ast-pro-upgrade-link {
     flex: inherit;
 }
 
-.astra-popover-color .components-circular-option-picker__option:focus::after{
-    width: auto;
-    height: auto;
-}
-
 .astra-popover-color .components-h-stack .components-circular-option-picker__option-wrapper{
     margin-right: 0;
 }
@@ -1101,7 +1096,7 @@ a.ast-pro-upgrade-link {
 	width: 20px;
 	padding: 4px;
 	background: transparent;
-	box-shadow: none;
+	box-shadow: none !important;
 	cursor: pointer;
 }
 .astra-color-clear-button.components-button:focus:not(:disabled) {
@@ -2077,4 +2072,10 @@ a.ast-pro-upgrade-link {
 
 .components-base-control .components-base-control__field .components-input-control__backdrop {
   border-color: #D1D5DB !important;
+}
+
+@media (min-width: 782px) {
+    div#astra-theme-layout\:theme-meta-panel .components-panel__header+.interface-complementary-area-header {
+        margin-bottom: -2px;
+    }
 }
